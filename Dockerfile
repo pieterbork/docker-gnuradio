@@ -49,15 +49,13 @@ RUN git clone https://github.com/mossmann/hackrf.git && \
     make install && \
     ldconfig
 
-
-WORKDIR /opt/
-RUN git clone git://git.osmocom.org/gr-osmosdr
-WORKDIR /opt/gr-osmosdr
-RUN mkdir build && cd build
-WORKDIR /opt/gr-osmosdr/build
-RUN cmake ../ -DENABLE_HACKRF=ON
-RUN make -j${NUM_THREADS}
-RUN make install
-RUN ldconfig
+RUN git clone git://git.osmocom.org/gr-osmosdr && \
+    cd gr-osmosdr && \
+    mkdir build && \
+    cd build && \
+    cmake ../ -DENABLE_HACKRF=ON && \
+    make -j${NUM_THREADS} && \
+    make install && \
+    ldconfig
 
 CMD ["/bin/bash"]
