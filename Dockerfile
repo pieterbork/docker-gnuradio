@@ -1,15 +1,12 @@
 FROM phusion/baseimage:0.10.0
 
 ENV NUM_THREADS 2
-ENV GR_BRANCH maint
-ENV UHD_BRANCH maint
 
 RUN apt-get update && apt-get dist-upgrade -yf && apt-get clean && apt-get autoremove
 RUN apt-get install -y \
     build-essential \
     cmake \
     git \
-    wget \
     libasound2-dev \
     libboost-all-dev \
     libfftw3-3 \
