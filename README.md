@@ -5,10 +5,15 @@ This image is hosted on Dockerhub here at `pieterbork/gnuradio`
 ## This container also installs the following packages to receive wifi/bt/zigbee packets
 
 https://github.com/bastibl/gr-foo
+
 https://github.com/rftap/gr-rftap
+
 https://github.com/JiaoXianjun/BTLE
+
 https://github.com/riverloopsec/killerbee
+
 https://github.com/pieterbork/gr-ieee802-11
+
 https://github.com/pieterbork/gr-ieee802-15-4
 
 ## Building
