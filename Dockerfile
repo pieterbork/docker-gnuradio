@@ -11,6 +11,7 @@ RUN apt-get install -y \
     libboost-all-dev \
     libfftw3-3 \
     libfftw3-dev \
+    libgcrypt-dev \
     libqwt-dev \
     libqwt5-qt4 \
     libusb-1.0-0 \
@@ -19,19 +20,38 @@ RUN apt-get install -y \
     libuhd-dev \
     libuhd003 \
     libcppunit-dev \
+    libsqlite3-dev \
+    mercurial \
     uhd-host \
     pkg-config \
+    python-cairo \
     python-cairo-dev \
     python-cheetah \
+    python-crypto \
+    python-dev \
     python-gtk2 \
     python-lxml \
     python-mako \
+    python-matplotlib \
     python-numpy \
+    python-serial \
     python-qt4 \
     python-qwt5-qt4 \
     python-pip \
+    python-usb \ 
     python-zmq \
-    swig
+    swig \
+    sqlite3 \
+    tcpdump \
+    vim
+
+RUN hg clone https://bitbucket.org/secdev/scapy-com && \
+    cd scapy-com && \
+    python setup.py install
+
+RUN git clone https://github.com/riverloopsec/killerbee.git && \
+    cd killerbee && \
+    python setup.py install
 
 RUN git clone --recursive https://github.com/gnuradio/gnuradio.git && \
     cd gnuradio && \
